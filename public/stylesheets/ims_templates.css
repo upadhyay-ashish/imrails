@@ -38,7 +38,7 @@ table, caption, tbody, tfoot, thead, tr {
   font-style: inherit;
   font-family: inherit;
   vertical-align: baseline;
-   -webkit-border-radius: 16px; -moz-border-radius: 16px; overflow:auto;
+   
 }
 
 /* Tables still need 'cellspacing="0"' in the markup. */
