@@ -46,8 +46,8 @@ input
 }
 textarea
 {
-    width:110px;
-    height:50px;
+    width:210px;
+    height:51px;
     padding:2px;
 }
 textarea:focus
