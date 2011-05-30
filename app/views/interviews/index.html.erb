@@ -5,6 +5,7 @@
       <% content_for :head do %>
         <li><%=link_to "Export Search Results", request.parameters.merge({:format => :csv}),{:class=>"export"}%></li>
         <li><%=link_to "Add New Candidates", new_interview_path%></li>
+        <li><%=link_to "Add New User", new_user_path,{:class=>"add_contact"} if @user.role=="SuperAdmin"%></li>
       <% end %>
     </div>
     <div class="displaying">

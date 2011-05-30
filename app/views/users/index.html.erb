@@ -8,7 +8,7 @@
       <% end %>
     </div>
     <div class="displaying">
-      Displaying contacts <b>1&nbsp;-&nbsp;30</b> of <span class="countResult"><%=@users.total_entries%></span> in total
+     <%= page_entries_info @users %>
     </div>
 
     <%=will_paginate @users%>
