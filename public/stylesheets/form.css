@@ -23,7 +23,6 @@ root {
 {padding: 7px 10px;
  font-weight:bold;
  color:black;
- -webkit-border-radius: 6px;
  text-align: center;
 }
 #form1 td
@@ -44,13 +43,12 @@ input
    
     width:210px;
     padding:2px;
-    -webkit-border-radius: 16px; -moz-border-radius: 16px; overflow:auto;
 }
 textarea
 {
     width:110px;
+    height:50px;
     padding:2px;
-    -webkit-border-radius: 16px; -moz-border-radius: 16px; overflow:auto;
 }
 textarea:focus
 {
@@ -63,15 +61,12 @@ textarea:focus
     text-align: center;
     height:500px;
     width:350px;
-    -webkit-border-radius: 6px;
-    
 }
 #form2 th
 
 {padding: 7px 10px;
  font-weight:bold;
  color:black;
- -webkit-border-radius: 6px;
  text-align: center;
 
 }
@@ -85,7 +80,6 @@ textarea:focus
 #form2 caption
 {
     color:black;
-    
     background-color: #79b7e7;
 }
 
@@ -107,7 +101,6 @@ textarea:focus
     margin-left: 800px;
     color:Black;
     width:650px;
-    
     background-color: greenyellow;
 }
 #form3
