@@ -38,6 +38,7 @@
         <div id="tabs" class="noprint">
 
           <ul class="box" id="mainMenu">
+            
             <li <%= 'id=active' unless params[:controller] != 'home'%>>
               <%= link_to 'View All Candidates', interviews_path%>
             </li>
@@ -45,18 +46,19 @@
 
               <%= link_to 'Import Data via CSV File', csv_upload_interviews_url%>
             </li>
+            
             <li <%= 'id=active' unless params[:controller] != 'home'%>>
               <%= link_to 'Users', users_url if @user.role=="SuperAdmin"%>
             </li>
-            <li <%= 'id=active' unless params[:controller] != 'home'%>>
-              <%= link_to 'Logout', logout_url%>
-            </li>
-
+           
+ <%= yield :head %>
           </ul>
           
         </div>
         <% if @user %>
-        <label id="username">User Logged In : <%= @user.firstname%> <%= @user.lastname %> </label>
+        <label id="username">User Logged In : <%= @user.firstname%> <%= @user.lastname %></label>
+        <%= link_to 'Logout', logout_url%>
+
         <% end %>
       </div>
 
