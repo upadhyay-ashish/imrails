@@ -1,0 +1,54 @@
+<div class="mainbox">
+  <div style="margin-left: 200px;">
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <table id="form1">
+        <tr>
+  <div class="field">
+   <th> <%= f.label :firstname %><br /></th><td>
+    <%= f.text_field :firstname %></td>
+      </div></tr><tr>
+  <div class="field">
+    <th><%= f.label :lastname %><br /></th><td>
+    <%= f.text_field :lastname %></td>
+      </div></tr><tr>
+  <div class="field">
+    <th><%= f.label :username %><br /></th><td>
+    <%= f.text_field :username %></td>
+      </div></tr><tr>
+  <div class="field">
+    <th><%= f.label :email %><br /></th><td>
+    <%= f.text_field :email %></td>
+      </div></tr><tr>
+  <div class="field">
+    <th><%= f.label :password %><br /></th><td>
+    <%= f.text_field :password %></td>
+      </div></tr><tr>
+  <div class="field">
+    <th><%= f.label :address %><br /></th><td>
+    <%= f.text_field :address %></td>
+      </div></tr><tr>
+  <div class="field">
+    <th><%= f.label :phone_number %><br /></th><td>
+    <%= f.text_field :phone_number %></td>
+      </div></tr><tr>
+  <div class="field">
+    <th><%= f.label :role %><br /></th><td>
+    <%= f.text_field :role %></td>
+      </div></tr><tr></table>
+  <div class="actions">
+    <center><tr><%= f.submit %></tr>
+  </div></tr>
+<% end %>
+  </div>
+</div>

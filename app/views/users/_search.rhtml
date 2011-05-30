@@ -1,0 +1,36 @@
+<div class="column searchform contact_search">
+  <%form_for :search , :url=>search_users_path,:html=>{:method=>:get} do |f|%>
+            <div class="menu">
+              Search
+            </div>
+            <div class="row">
+              <div class="right_side_form">
+                <%= f.text_field :firstname_contains -%>
+              </div>
+              <label for="search_owner_equals">Firstname</label>
+            </div>
+            <div class="row">
+              <div class="right_side_form">
+                <%= f.text_field :lastname_contains -%>
+              </div>
+              <label for="search_first_name_search">Lastname</label>
+            </div>
+            <div class="row">
+              <div class="right_side_form">
+                <%= f.text_field :username_contains -%>
+              </div>
+              <label for="search_first_name_search">Username</label>
+            </div>
+            <div class="row">
+              <div class="right_side_form">
+                <%= f.text_field :email_contains -%>
+              </div>
+              <label for="search_last_name_search">Email</label>
+            </div>
+            <div class="row">
+              <div class="right_side_form">
+                <%= f.submit "Search" %>
+              </div>
+            </div>
+<%end%>
+</div>

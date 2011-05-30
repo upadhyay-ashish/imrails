@@ -1,0 +1,54 @@
+<%=render :partial=>"search"%>
+<div class="column contactlist">
+  <div class="mainbox">
+    <div class="menu">
+      <div id="tabs" class="noprint">
+        <ul class="box" id="mainMenu">
+          <li><%=link_to "Export Search Results", request.parameters.merge({:format => :csv}),{:class=>"export"}%></li>
+          <li><%=link_to "Add New User", new_user_path,{:class=>"add_contact"}%></li>
+        </ul>
+      </div>
+    </div>
+    <div class="displaying">
+      Displaying contacts <b>1&nbsp;-&nbsp;30</b> of <span class="countResult"><%=@users.total_entries%></span> in total
+    </div>
+
+    <%=will_paginate @users%>
+
+    <%if @users.blank?%>
+      <h3>  No Results Found</h3>
+    <%end%>
+
+    <table class="standard_table" cellpadding="0" cellspacing="0">
+      <tbody><tr class="list">
+          <th>Firstname</th>
+          <th>Username</th>
+          <th>E-Mail</th>
+          <th>Address</th>
+          <th>Phone number</th>
+          <th>Role</th>
+          <th>Show</th>
+          <th>Delete</th>
+        </tr>
+
+
+        <% @users.each_with_index do |user,i| %>
+          <tr class="<%=cycle('', 'alt_row')%>">
+            <td><%= user.firstname %></td>
+            <td><%= link_to user.username,edit_user_path(user)  %></td>
+            <td><%= user.email %></td>
+            <td><%= user.address %></td>
+            <td><%= user.phone_number %></td>
+            <td><%= user.role %></td>
+            <td><%= link_to 'Show', user %></td>
+            <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+    <%=will_paginate @users%>
+    <div class="clear"></div>
+
+  </div>
+

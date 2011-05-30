@@ -1,0 +1,45 @@
+<%=render :partial=>"search"%>
+<div class="column contactlist">
+  <div class="mainbox">
+    <p id="notice"><%= notice %></p>
+    <table id="form2" style="margin-left: 200px;">
+      <caption><center>Details of <%= @user.firstname %> <%= @user.lastname  %> </center></caption>
+
+      <tr>
+        <th>Username:</th><td>
+          <%= @user.username %>
+        </td></tr>
+
+      <tr>
+        <th>Email:</th><td>
+          <%= @user.email %>
+        </td></tr>
+
+      <tr>
+        <th>Password:</th><td>
+          <%= @user.password %>
+        </td></tr>
+
+      <tr>
+        <th>Address:</th><td>
+          <%= @user.address %>
+        </td></tr>
+
+      <tr>
+        <th>Phone number:</th><td>
+          <%= @user.phone_number %>
+        </td></tr>
+
+      <tr>
+        <th>Role:</th><td>
+          <%= @user.role %>
+        </td></tr>
+
+      <tr>
+        <td><center>
+            <%= link_to 'Edit', edit_user_path(@user) %>
+        </td>   <td><center>
+          <%= link_to 'Back', users_path %></td>
+      </tr>
+    </table>
+  </div>

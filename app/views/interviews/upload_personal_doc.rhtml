@@ -1,0 +1,11 @@
+<div class="mainbox_popup">
+<% form_for :attachment, :url=>import_personal_doc_path(:id=>@interview.id) ,:html => { :multipart => true ,:name=>"per_doc"} do |f| %>
+<table id="customers">
+    <tr> <td><%= f.label :data, 'Import Participant file' %></td> <td><%= f.file_field :data -%></td></tr>
+    <tr><th><p>
+        <%=link_to "Submit","javascript:void(0);",:onclick=>"document.per_doc.submit(); opener.location.reload(); window.close();",:class=>"add_items"%>
+    </p></th></tr>
+  </table>
+<% end %>
+
+</div>

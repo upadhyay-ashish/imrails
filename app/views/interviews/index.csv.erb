@@ -1,0 +1,6 @@
+<%- headers = ["Id", "Name","Phone Number","Email","Total Experience","ROR Experience", "DOI","Location","Result"] -%>
+<%= FasterCSV.generate_line headers %>
+<%- @interviews.each do |n| -%>
+<%- row = [ n.id,n.name,n.phoneNumber,n.email,n.total_exp,n.ror_exp,n.doi,n.type_location,n.result ] -%>
+<%=  FasterCSV.generate_line row %>
+<%- end -%>

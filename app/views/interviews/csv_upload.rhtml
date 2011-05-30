@@ -1,0 +1,18 @@
+<% if flash[:notice] -%>
+<%= flash[:notice] %>
+<% end -%>
+
+<% if flash[:error] -%>
+<%= flash[:error] %>
+<% end -%>
+
+<div class="mainbox_popup">
+<% form_for :csv_import, :url=>import_csv_interviews_path ,:html => { :multipart => true} do |f| %>
+<table id="form3">
+  <caption><center><%= f.label :file, 'Import Participant file' %></center></caption>
+  <tr><td><center><%= f.file_field :file -%></td></tr>
+  <tr><td><center><%= submit_tag "Submit" %></td></tr>
+  </table>
+<% end %>  
+
+</div>

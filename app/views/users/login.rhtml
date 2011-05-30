@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head id="Head1">
+    <title> IMS
+    </title>
+    <style type="text/css">
+      <!--
+      input {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        color: #333333;
+        text-decoration: none;
+      }
+      td {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        text-decoration: none;
+        color: #666666;
+      }
+      -->
+    </style>
+  </head>
+
+  <body leftmargin="0" topmargin="0" onload="document.forms[0].UserName.focus()" >
+    <br></br><br></br><br></br><br></br>
+    <fieldset>
+      <legend><b>Login To Interview Management System</b></legend>
+
+      <%= form_tag('users/verify_login') do -%>
+
+        <table align="center" border="0" cellpadding="0" cellspacing="0" >
+
+          <tbody><tr>
+              <td><center> <th><h1>Login</h1></td></th>
+                  <table style="border-color: rgb(41, 87, 150); border-style: double; border-width: 1px;" align="center" border="0" bordercolor="#295796" cellpadding="0" cellspacing="0" width="300">
+                    <tbody><tr>
+                        <td bgcolor="#F1F7FF">
+                          <table id="table3" align="center" border="0" cellpadding="2" cellspacing="0" width="98%">
+                            <tbody>
+                              <tr>
+                                <td align="left" width="37%"> Username</td>
+                                <td width="60%">
+                                  <%= text_field :login,:username %>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="left" width="37%"> Password</td>
+                                <td width="60%">
+                                  <%= password_field :login,:password,{:title=>"Kindly provide your Login password!"} %>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td colspan="2"> <p align="center">
+                                    <input name="ImageButton2" value="Login" id="ImageButton2" type="submit">
+                                  </p></td>
+                              </tr>
+
+                            </tbody></table></td>
+                      </tr>
+                    </tbody></table></td>
+            </tr>
+          </tbody></table>
+      <%end%>
+    </fieldset>
+  </body></html>

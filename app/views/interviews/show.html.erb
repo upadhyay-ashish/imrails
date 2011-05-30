@@ -1,0 +1,47 @@
+<%=render :partial=>"search"%>
+<div class="column contactlist">
+  <div class="mainbox">
+    <p id="notice"><%= notice %></td></tr>
+
+    <table id="form2" style="margin-left: 200px;">
+      <caption><center><b>Details of <%= @interview.name.upcase %> </b></center></caption>
+      <th>Experience:</th><td>
+        <%= @interview.total_exp %>
+      </td></tr>
+      <tr>
+        <th>Skills:</th><td>
+          <%= @interview.ror_exp %>
+        </td></tr>
+      <tr>
+        <th>Date Of Interview:</th><td>
+          <%= @interview.doi %>
+        </td></tr>
+      <tr>
+        <th>Type orLocation:</th><td>
+          <%= @interview.type_location %>
+        </td></tr>
+      <tr>
+        <th>Status:</th><td>
+          <%= @interview.result %>
+        </td></tr>
+      <tr>
+        <th>Contact Number:</th><td>
+          <%= @interview.phoneNumber %>
+        </td></tr>
+      <tr>
+        <th>Remarks:</th><td>
+          <%= @interview.remarks %>
+        </td></tr>
+      <tr>
+        <th>Email:</th><td>
+          <%= @interview.email %>
+        </td></tr>
+      <tr>
+        <td><center><%= link_to 'Edit', edit_interview_path(@interview) %></td>
+        <td><center><%= link_to 'Back', interviews_path %></td>
+     
+
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,213 @@
+/* Make sure the layout is centered in IE5 */
+body        { text-align: center; }
+.container  { text-align: left; }
+
+/* This fixes the problem where IE6 adds an extra 3px margin to
+two columns that are floated up against each other. */
+
+* html .column { overflow-x: hidden; } /* IE6 fix */
+
+.pull-1, .pull-2, .pull-3, .pull-4,
+.push-1, .push-2, .push-3, .push-4, 
+ul, ol { position: relative; }/* Keeps IE6 from cutting pulled/pushed images */
+
+/* Fixes incorrect styling of legend in IE6 fieldsets. */
+legend { margin-bottom:1.4em; }
+
+/* Fixes incorrect placement of numbers in ol's in IE6/7 */
+ol { margin-left:2em; }
+
+/* -------------------------------------------------------------- 
+reset.css
+* Resets default browser CSS.
+
+Based on work by Eric Meyer:
+* meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+-------------------------------------------------------------- */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  vertical-align: baseline;
+   -webkit-border-radius: 16px; -moz-border-radius: 16px; overflow:auto;
+}
+
+/* Tables still need 'cellspacing="0"' in the markup. */
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight:400; }
+
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+
+a img { border: none; }
+
+/* begin template CSS */
+
+body                {font-family: arial, verdana, sans-serif;  margin: 0px auto;  padding: 0px;	color: #333; text-align: center;  font-size: 12px; line-height: 140%;}
+#wrapper            {margin: 0 auto; padding: 0; background: repeat-y scroll 0 0; overflow: hidden;}
+div, img, form, ul 	{margin: 0; padding: 0; border: 0; text-align: left;}
+
+.left 			        	{float: left;}	
+.right 				        {float: right;}	
+a 					        {text-decoration: none; color: #006699;}
+a:hover 		        	{text-decoration: underline; color: #00aced;}
+.tr, div.tr,
+span.tc               {text-align: right;}
+.tc, div.tc,
+span.tc, td.tc        {text-align: center;}
+input, 
+textarea, 
+select                {font-size:11px; font-weight:bold; padding:3px!important; font-family: Arial, Helvetica, sans-serif;}
+.clear 				  {clear: both;}
+.half                 {width: 48%;}
+.third                {width: 30%;}
+#body_struture        {position:relative;}
+#featured_area        {position: relative; }
+.black                {color: #333;}
+#logo                 { position: absolute; top:10px; right:0; z-index:1; width:77%; background: no-repeat #002960; height:38px;  }
+#logo span            { color:#fff;}
+#app_name             {color: #002960;  margin: 60px 0 0 15px; float: left; overflow:hidden; position:absolute;	font: normal 26px Georgia;}
+
+#search               {padding: 5px 15px; text-align: right; float: right;}                 
+#search input         {float: left; border:1px solid #ccc; color:#878785; font-size:16px; padding:3px; width:150px; }
+#search input.search_button {cursor: pointer; padding: 0; margin: 2px 0 0 5px; border: none; width: auto; background:  no-repeat; width: 26px; height: 26px;}
+#site         { padding: 0 ; margin: 0; height:133px;}
+#column_left          {float: left; width: 600px; padding-bottom: 20px;}
+#column_right         {float: right; width: 290px; padding: 0 15px 20px;}
+#full_content		  {padding: 0 15px 0 0;}
+.float_image_left     {float: left; margin: 0 15px 10px 0;}
+.float_image_right    {float: right; margin: 0 0 10px 15px;}
+
+
+p                     {margin: 10px 0;}
+h1                    {font-family: Arial, Helvetica, sans-serif; font-size: 17px; font-weight: bold;  padding:20px 0 0 10px; clear:both; margin:0!important;}
+h2                    {color:#333; font-size:17px; clear: both; margin: 30px 0 15px 10px; font-weight:bold;}
+h1 a, h2 a, h3 a      {color: #069; text-decoration: none;}
+.eyebrow              {color:#8B895A; font-size:11px; margin: 5px 0;}
+h1 .show              {color: black;}
+.row                  {padding: 10px 0; }
+/*.row input,*/
+.row textarea         {border: 1px solid #888; padding: 3px; background: #fff;}
+
+.row textarea,
+.row select           {width: 240px; }
+.row label            {float: left; font-size: 11px; color: #333; text-align:right;}
+.required             {font-weight:bold;}
+.intromessageRequired {padding: 10px 0;}
+.row span             {display:none;}
+.row span.error       {display:block; clear: both; padding: 2px 0 0 0; color: red;}
+.field_holder         {padding-left: 15px;  float: left; width: 450px;}
+
+#action_buttons       {margin: 0 0 70px 155px;}
+.submit_button        {width: 73px; height: 27px; float: left; margin: 0 10px 0 0;}
+.submit_button a      {color: #fff; border-bottom: none;}
+.submit_button a:hover{text-decoration: none;}
+.cancel               {padding-top: 5px;}
+
+.vertical_form  .field_holder {float: none; padding-left: 0; padding-top: 3px; width: 95%;}
+.vertical_form  label {float: none; padding-left: 0;}
+.vertical_form  .row  {padding: 7px 0;}
+.vertical_form #action_buttons  {margin: 0 0 70px;}
+
+.action a             {margin-right: 10px;}
+.table_title          {float:left; clear:both; margin: 0 0 0 15px; padding: 0; }
+.standard_table       { margin: 1px 0 7px;}
+.standard_table td    {margin: 1px 0 7px;}
+.standard_table th    {padding: 5px 10px;text-align: left;}
+.standard_table th    {background: url(../images/table_background.jpg);}
+.standard_table2 td,   
+.standard_table2 th    {padding: 10px;}
+.standard_table2 th    {background: url(../images/table_background.jpg);}
+table                 {width:100%;}
+.auto_width{width: auto;}
+tr.alt_row            {background: #e7e7e7;}
+#sort_results         {margin:15px 0 0; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 10px 0;}
+#filter_by            {float: right; padding: 0 15px 0 0;}
+#sort_by              {float: left;}
+#sort_results select  {width: 150px;}
+
+.face img               {border: #a4a7ab 1px solid; width:50px; height:65px; }
+td.face                 {width:50px; padding-left: 0px;}
+td.info                 {width: 200px;}
+td.info a               {display: block; font-weight: bold;}
+
+td.info, td.info02, td.location	{vertical-align: top;}
+
+.pagination ul          {clear:both; position:relative; display:inline;}
+.pagination ul li       {display: inline; list-style-type: none; padding-right: 5px; margin:0;}
+.pagination li.active   {font-weight: bold;color: #000;}
+
+.results_info         {margin: 10px 0 0; padding: 10px 0 0;}
+.document_title       {font-size: 16px; color: #069;}
+.document_url         {color: #b5b38c;}
+.results_info p       {margin: 2px 0;}
+	
+.result_count         {margin: 30px 0 0;}
+.pic                  {float: left; height: 60px; width: 100px; margin: 20px 20px 0 0; }
+.pic div              {margin: 5px 0 0; }
+div.pic img           {border: 1px solid;  border-color: #ddd #ddd #ddd #ccc; padding: 10px;}
+#breadcrumbs          {margin: 0 0 10px;}
+#breadcrumbs a        {font-size: 11px; color: #A09E73;}
+	
+#add_space            {margin: 10px 0 20px;}
+#footer               {clear: both; background: white no-repeat scroll 0 0; color:#999; font-size:11px; margin:0; padding: 10px; }
+
+
+ul.bullets            {padding: 0 0 10px; margin: 0;}
+ul.bullets li         {padding: 0; margin: 0 0 0 20px;}
+
+/*above main nav*/
+#utility_nav          {float: right; width: 200px; height: 20px; padding: 7px 5px 0 0;}	
+#utility_nav li       {float: right; list-style: none;}
+#utility_nav a        { padding-right: 5px;  font-size:11px; }
+
+#utility_nav          { position:absolute; right:5px; top: 63px; margin:0; font-weight:bold;}      
+#utility_nav li       { margin:0;}
+
+.utility_blue         {color: #069;}
+
+
+#nav_bar              {  position:absolute; top:94px; clear:both; height:38px; padding:0; margin:0; }
+#nav_bar .right { position:relative; font-size:11px; font-weight:bold; color:#666; right:15px; top:11px;}
+#nav_bar .right a:link,
+#nav_bar .right a:visited{ padding:0 0 0 8px;}
+
+#nav {padding:0; margin:0; float:left; height:38px; position:relative; z-index:500; }
+#nav li:hover ul.sub li a {color: #666;}
+#nav li               {float: left; list-style: none; margin-right: 2px;}
+#nav a                {font-weight: normal; color: #666; padding: 10px 15px; line-height: 38px; font-size: 15px; text-decoration: none; }
+#nav a:hover          {color: #333; text-decoration: underline;}
+#nav li .active       {color: #333; font-wieght: bold;}
+
+
+/* Dropdown menu */
+#nav li.top {display:block; float:left; height:38px; list-style:none; }
+#nav li a.top_link {display:block; float:left; height:35px; line-height:33px; color:#666; text-decoration:none; font-size:11px; font-weight:bold; padding:0 0 0 12px;}
+#nav li a.top_link span {float:left; display:block; padding:0 24px 0 12px; height:35px;}
+#nav li a.top_link span.down {float:left; display:block; padding:0 24px 0 12px; height:35px;}
+#nav li:hover a.top_link {color: #333; text-decoration: underline;}
+#nav li:hover a.top_link .active {color: #333; font-wieght: bold;}
+
+/* Default list styling */
+#nav li:hover {position:relative; z-index:200;}
+#nav li:hover ul.sub{left:1px; top:38px; background-image:url(../images/dropdownbg.png); padding:3px 3px 20px 3px; border:1px solid #CCC; white-space:nowrap; width:100px; height:auto; z-index:300;}
+#nav li:hover ul.sub li{display:block; height:20px; position:relative; float:left; width:90px; font-weight:normal;}
+#nav li:hover ul.sub li a{display:block; font-size:11px; height:18px; width:88px; line-height:18px; text-indent:5px; color: #333; text-decoration: none;}
+#nav li:hover ul.sub li a:hover { text-decoration: underline; font-weight: bold;}
+
+#nav ul, 
+#nav li:hover ul ul,
+#nav li:hover li:hover ul ul,
+#nav li:hover li:hover li:hover ul ul,
+#nav li:hover li:hover li:hover li:hover ul ul{position:absolute; left:-9999px; top:-9999px; width:0; height:0; margin:0; padding:0; list-style:none;}
+

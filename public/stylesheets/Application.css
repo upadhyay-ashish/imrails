@@ -1,0 +1,218 @@
+/*
+    Document   : Application
+    Created on : Apr 28, 2011, 3:10:30 PM
+    Author     : Ankit Gupta-FIR
+    Description:
+        Purpose of the stylesheet follows.
+            Default for all the pages in the application and its table structure
+
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+#customers
+{
+    border-collapse: collapse;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    width:85%;
+    border-collapse:collapse;
+    text-align:center;
+}
+#customers caption
+{
+    text-align:center;
+    font-size:1.2em;
+    border:0.1px solid Grey;
+    padding:3px 7px 2px 7px;
+    background-color: #002960   ;
+    color:#fff;
+}
+#customers td, #customers th
+{
+    text-align:left;
+    font-size:1.1em;
+    border:0.1px solid Grey;
+    padding:3px 7px 2px 7px;
+
+}
+#customers th
+{
+    font-size:1.1em;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color: #002960   ;
+    color:#fff;
+}
+textarea
+{
+    width: 200px;
+    height: 150px;
+    background-color:aliceblue;
+    border:true;
+    border-color:#dffec2;
+
+}
+label
+{
+     
+}
+
+#customers td
+{
+    background-color: Snow  ;
+    text-align:center;
+    color:#000;
+}
+#customers tr.alt td
+{
+    color:#000;
+    background-color:Coral ;
+}
+td
+{
+    padding:15px;
+}
+body
+{
+    background-color:whitesmoke;
+
+}
+
+root {
+
+    display: block;
+}
+
+ul, li {
+    margin:0px;
+    padding:0px;
+    list-style:none;
+
+}
+
+.menu_class {
+    border:3px solid #1c1c1c;
+}
+.the_menu li {
+    background-color: #002960  ;
+}
+
+.the_menu li a {
+    color:White  ;
+    text-decoration:none;
+    padding:10px;
+    display:block;
+}
+
+.the_menu li a:hover {
+    padding:10px;
+    font-weight:bold;
+    color:chartreuse;
+
+}
+
+.IR{
+    position: relative;
+    overflow: hidden;
+    font-size: 1em;
+}
+
+.IR em {
+    display: block;
+    position: absolute;
+    top: 1; left: 1;
+    z-index: 1;
+}
+
+button#IRbutton {
+    background: none;
+    border: "1px";
+    float: left;
+    display: inline;
+}
+.errorExplanation
+{
+    background-color: Grey;
+    width: 45%;
+}
+.errorExplanation li
+{
+    background-color: steelblue;
+}
+#IRbutton:hover { cursor: pointer; /* cursor: hand; for IE5 */ }
+#IRbutton, #IRbutton em { width: 83px; height: 26px; }
+#IRbutton:hover em, #IRbutton:focus em { background-position: -83px 0; }
+
+
+#calendar table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#calendar td,
+#calendar th {
+  font-family: "Lucida Grande",arial,helvetica,sans-serif;
+  font-size: 10px;
+  padding: 6px;
+  border: 1px solid #999;
+}
+
+#calendar th {
+  background: #DDD;
+  color: #666;
+  text-align: center;
+  width: 14.2857142857143%;
+}
+
+#calendar td {
+  background: #FFF;
+  color: #777;
+  height: 80px;
+  vertical-align: top;
+  font-size: 16px;
+}
+
+#calendar .notmonth {
+  color: #CCC;
+}
+
+#calendar #month {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#calendar #month a, #calendar #month a:hover {
+  text-decoration: none;
+  padding: 0 10px;
+  color: #999;
+}
+
+#calendar .today {
+  background-color: #D7F2FF;
+}
+
+#calendar ul {
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+}
+
+#calendar li {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  text-align: center;
+}
+#user ul li:hover
+{
+    background-color:#dffec2;
+}
+#tabs mainMenu ul li a
+{
+    border: true;
+    border-width: 2px;
+    border-color: black;
+}

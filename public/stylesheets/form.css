@@ -1,0 +1,129 @@
+/* 
+    Document   : form
+    Created on : May 24, 2011, 2:45:22 PM
+    Author     : ankit gupta-fir
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+#form1
+{
+    text-align: center;
+
+}
+#form1 th
+{padding: 7px 10px;
+ font-weight:bold;
+ color:black;
+ -webkit-border-radius: 6px;
+ text-align: center;
+}
+#form1 td
+{
+    background-color:#F7F4FB;
+    padding: 5px 2px 5px 2px;
+    color:black;
+    text-align: center;
+}
+input:focus
+{
+    
+    background-image: none;
+    background-color:wheat;
+}
+input
+{
+   
+    width:210px;
+    padding:2px;
+    -webkit-border-radius: 16px; -moz-border-radius: 16px; overflow:auto;
+}
+textarea
+{
+    width:110px;
+    padding:2px;
+    -webkit-border-radius: 16px; -moz-border-radius: 16px; overflow:auto;
+}
+textarea:focus
+{
+    
+    background-image: none;
+    background-color:#c4d1d9;
+}
+#form2
+{
+    text-align: center;
+    height:500px;
+    width:350px;
+    -webkit-border-radius: 6px;
+    
+}
+#form2 th
+
+{padding: 7px 10px;
+ font-weight:bold;
+ color:black;
+ -webkit-border-radius: 6px;
+ text-align: center;
+
+}
+
+#form2 td
+{
+    color:black;
+    background-color:#F7F4FB;
+    text-align: center;
+}
+#form2 caption
+{
+    color:black;
+    
+    background-color: #79b7e7;
+}
+
+
+#form2 a
+{
+    width:110px;
+    padding:2px;
+    
+}
+#form2 a:focus
+{
+    
+    background-image: none;
+    background-color:#c4d1d9;
+}
+#username
+{
+    margin-left: 800px;
+    color:Black;
+    width:650px;
+    
+    background-color: greenyellow;
+}
+#form3
+{
+    text-align: center;
+    
+}
+#form3 td
+{
+    text-align: center;
+    background-color:#F7F4FB;
+}
+#form3 caption
+{
+    
+    background-color:#DDD;
+    color:Black;
+    height:35px;
+}
