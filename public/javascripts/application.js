@@ -226,20 +226,31 @@ $(function() {
 });
 
 $(function() {
-		// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
-		$( "#dialog:ui-dialog" ).dialog( "destroy" );
+    // a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+    $( "#dialog:ui-dialog" ).dialog( "destroy" );
 
-		$( "#dialog-confirm" ).dialog({
-			resizable: false,
-			height:140,
-			modal: true,
-			buttons: {
-				"Delete all items": function() {
-					$( this ).dialog( "close" );
-				},
-				Cancel: function() {
-					$( this ).dialog( "close" );
-				}
-			}
+    $( "#dialog-confirm" ).dialog({
+        resizable: false,
+        height:140,
+        modal: true,
+        buttons: {
+            "Delete all items": function() {
+                $( this ).dialog( "close" );
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+});
+
+$(function() {
+		var availableTags = [
+			"SuperAdmin",
+			"Admin",
+			
+		];
+		$( "#user_role" ).autocomplete({
+			source: availableTags
 		});
 	});
