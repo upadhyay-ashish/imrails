@@ -132,6 +132,8 @@ button#IRbutton {
 }
 .errorExplanation
 {
+
+    color:red;
     background-color: Grey;
     width: 45%;
 }

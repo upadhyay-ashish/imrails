@@ -166,10 +166,7 @@ span.welcome{padding-right:10px;}
 .add_items:visited{ padding:4px 8px 4px 22px; background: no-repeat 4px 4px #f8f8f8; color:#00aced; font-weight:bold; font-size:11px;  border:1px solid #ddd; margin:3px 0 5px 10px;}
 .add_items:hover{ background-color:#e7e7e7; border:1px solid #d8d8d8; text-decoration:none; color:#000;}
 
-.formError { font-size:11px; margin-top:-3px; padding:0 10px;}
-.errorExplanation h2{ border:0; font-size:13px; color:red; margin:0;}
-.errorExplanation li,
-.errorExplanation p{ display:none;}
+
 
 .options{ padding: 0; margin:0 10px ; font-size:11px; overflow:auto; float:right;}
 .options li{ list-style-type:none; float:left; margin-left:10px;}

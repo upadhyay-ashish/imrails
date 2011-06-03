@@ -1,5 +1,11 @@
 <%=render :partial=>"search"%>
 <div class="column contactlist">
+  <div class="mainbox">
+    <div class="menu">
+      <% content_for :head do %>
+        <li><%=link_to "Export Search Results", request.parameters.merge({:format => :csv}),{:class=>"export"}%></li>
+        <li><%=link_to "Add New Candidates", new_interview_path%></li>
+      <% end %>
 <h1>Editing interview</h1>
 <center>
 <%= render 'form' %>

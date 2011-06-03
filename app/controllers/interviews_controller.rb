@@ -101,12 +101,12 @@ class InterviewsController < ApplicationController
     end
     flash[:notice] = "Successfully added #{logcount} Participant(s)."
     redirect_to interviews_path
-    #    rescue => exception
-    #      # If an exception is thrown, the transaction rolls back and we end up in this rescue block
-    #      error = ERB::Util.h(exception.to_s) # get the error and HTML escape it
-    #      flash[:error] = "Error adding logs.  (#{error}).  Please try again."
-    #      redirect_to csv_upload_interviews_url
-    #   end
+        rescue => exception
+          # If an exception is thrown, the transaction rolls back and we end up in this rescue block
+          error = ERB::Util.h(exception.to_s) # get the error and HTML escape it
+          flash[:error] = "Please Check The File Being uploaded.Check File Format and CSV Headers.Please try again.(#{error})"
+          redirect_to csv_upload_interviews_url
+     
   end
 
   def upload_personal_doc

@@ -10,7 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110524090900) do
+ActiveRecord::Schema.define(:version => 20110603095056) do
+
+  create_table "a", :id => false, :force => true do |t|
+    t.integer  "id",            :default => 0, :null => false
+    t.string   "name"
+    t.integer  "total_exp"
+    t.datetime "doi"
+    t.string   "type_location"
+    t.string   "result"
+    t.string   "phoneNumber"
+    t.text     "remarks"
+    t.text     "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "ror_exp"
+  end
 
   create_table "attachments", :force => true do |t|
     t.integer  "interview_id"
@@ -33,6 +48,8 @@ ActiveRecord::Schema.define(:version => 20110524090900) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "ror_exp"
+    t.date     "dof"
+    t.string   "refer"
   end
 
   create_table "users", :force => true do |t|

@@ -18,6 +18,9 @@
               <th><%= f.label :Name %><br /></th><td>
         <%= f.text_field :name %></td>
       </div></tr><tr>
+           <th><%= f.label :Reference %><br /></th><td>
+        <%= f.text_field :refer %></td>
+      </div></tr><tr>
       <div class="field">
         <th>E-<%= f.label :Mail %><br /></th><td>
         <%= f.text_field :email %></td>
@@ -49,7 +52,15 @@
       <div class="field">
         <th><%= f.label :Remarks %><br /></th><td>
         <%= f.text_area :remarks %></td>
-      </div></tr><tr></table>
+      </div></tr><tr>
+  <div class="field">
+        <th>Date Of <%= f.label :Joining %><br /></th><td>
+        <%= f.text_field :dof %></td>
+      </div></tr><tr>
+     
+
+
+  </table>
       <div class="actions">
         <center><tr><%= f.submit %></tr>
       </div></tr>
