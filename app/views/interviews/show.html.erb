@@ -23,8 +23,20 @@
           <%= @interview.doi.strftime("%d/%m/%Y")   %>
         </td></tr>
       <tr>
+        <th>Date Of Joining:</th><td>
+          <% if(@interview.dof.nil?) %>
+          <p>Pending</p>
+          <% else %>
+          <%= @interview.dof.strftime("%d/%m/%Y")%>
+          <% end %>
+        </td></tr>
+      <tr>
         <th>Reference:</th><td>
-          <%= @interview.refer   %>
+         <% if(@interview.refer.nil?) %>
+          <p>Not Applicable</p>
+          <% else %>
+          <%= @interview.refer %>
+          <% end %>
         </td></tr>
       <tr>
 

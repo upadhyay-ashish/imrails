@@ -1,3 +1,6 @@
+
+
+
 <%=render :partial=>"search"%>
 <div class="column contactlist">
   <div class="mainbox">
@@ -5,7 +8,7 @@
       <% content_for :head do %>
         <li><%=link_to "Export Search Results", request.parameters.merge({:format => :csv}),{:class=>"export"}%></li>
         <li><%=link_to "Add New Candidates", new_interview_path%></li>
-          <% end %>
+      <% end %>
     </div>
     <div class="displaying">
       <%= page_entries_info @interviews %>
@@ -13,9 +16,9 @@
     <%if @interviews.blank?%>
       <h3>  No Results Found</h3>
     <%end%>
-    <table class="standard_table" cellpadding="0" cellspacing="0" >
+    <table id="ashish"class="standard_table" cellpadding="0" cellspacing="0" >
       <tbody><tr class="list">
-      
+
           <th>Name</th>
           <th>Status</th>
           <th>Reference</th>
@@ -25,13 +28,13 @@
         </tr><% j=1 %>
         <% @interviews.each_with_index do |interview,i| %>
           <tr class="<%=cycle('', 'alt_row')%>">
-          
+
             <td>
-<%= link_to "#{h interview.name.upcase}",interview %></td>
+              <%= link_to "#{h interview.name.upcase}",interview %></td>
             <td><%=h interview.result %></td>
-              <td><%=h interview.refer %></td>
-              <td><%=h interview.doi.strftime("%d/%m/%Y")  %>
-                
+            <td><%=h interview.refer %></td>
+            <td><%=h interview.doi.strftime("%d/%m/%Y")  %>
+
             <td><%interview.attachments.each_with_index do |attachment,i|%>
                 <%= link_to "#{attachment.data_file_name}", download_attachment_url(:id=>interview.id,:attachment_id=>attachment.id) %>
                 <%= "," if i+1 < interview.attachments.length%>
@@ -47,3 +50,5 @@
     <%=will_paginate @interviews%>
     <div class="clear"></div>
   </div></div>
+
+

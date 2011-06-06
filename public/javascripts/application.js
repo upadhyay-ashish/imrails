@@ -309,3 +309,8 @@ $(function() {
         }
     });
 });
+$('#ashish').click(function() {
+  $('#ashish').slideDown('slow', function() {
+    // Animation complete.
+  });
+});

@@ -218,3 +218,8 @@ button#IRbutton {
     border-width: 2px;
     border-color: black;
 }
+$('#clickme').click(function() {
+  $('#ashish').slideDown('slow', function() {
+    // Animation complete.
+  });
+});
