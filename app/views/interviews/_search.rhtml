@@ -5,7 +5,7 @@
     </div>
     <div class="row">
       <div class="right_side_form">
-        <%= f.text_field :name_contains -%>
+        <%= f.text_field :name_like -%>
       </div>
       <label for="search_owner_equals">Name</label>
     </div>
@@ -23,19 +23,19 @@
     </div>
     <div class="row">
       <div class="right_side_form">
-        <%= f.text_field :email_contains -%>
+        <%= f.text_field :email_like -%>
       </div>
       <label for="search_company_search">Email</label>
     </div>
     <div class="row">
       <div class="right_side_form">
-        <%= f.text_field :type_location_contains -%>
+        <%= f.text_field :type_location_like -%>
       </div>
       <label for="search_title_search">Location</label>
     </div>
    <div class="row">
     <div class="right_side_form">
-      <%= f.text_field :result_contains -%>
+      <%= f.text_field :result_like -%>
     </div>
     <label for="search_title_search">Status</label>
   </div>
