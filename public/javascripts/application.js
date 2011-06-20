@@ -314,3 +314,13 @@ $('#ashish').click(function() {
     // Animation complete.
   });
 });
+
+$(function() {
+  $("#dialog").dialog();
+});
+
+ $("a").click(function(event){
+      event.preventDefault();
+      $("#frame").attr("src", $(this).attr("href"));
+      $('#dialog').dialog('open');
+    });

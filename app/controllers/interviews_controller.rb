@@ -1,4 +1,3 @@
-require 'iconv'
 class InterviewsController < ApplicationController
   before_filter :authenticate
   # GET /interviews
@@ -24,7 +23,7 @@ class InterviewsController < ApplicationController
       format.xml  { render :xml => @interview }
     end
   end
-
+ 
   # GET /interviews/new
   # GET /interviews/new.xml
   def new

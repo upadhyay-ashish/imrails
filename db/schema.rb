@@ -12,21 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20110603095056) do
 
-  create_table "a", :id => false, :force => true do |t|
-    t.integer  "id",            :default => 0, :null => false
-    t.string   "name"
-    t.integer  "total_exp"
-    t.datetime "doi"
-    t.string   "type_location"
-    t.string   "result"
-    t.string   "phoneNumber"
-    t.text     "remarks"
-    t.text     "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "ror_exp"
-  end
-
   create_table "attachments", :force => true do |t|
     t.integer  "interview_id"
     t.string   "data_file_name"
