@@ -1,4 +1,6 @@
+<script>
 
+</script>
 
 <%=render :partial=>"search"%>
 <div class="column contactlist">
@@ -29,7 +31,7 @@
           <tr class="<%=cycle('', 'alt_row')%>">
 
             <td>
-              <%= link_to "#{h interview.name.upcase}",interview %></td>
+              <%= link_to "#{h interview.name.upcase}",interview,:id=>"candidate_#{h interview.id}" ,:class => 'details' %></td>
             <td><%=h interview.result %></td>
             <td><%=h interview.refer %></td>
             <td><%=h interview.doi.strftime("%d/%m/%Y")  %>

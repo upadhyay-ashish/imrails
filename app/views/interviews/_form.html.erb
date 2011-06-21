@@ -1,70 +1,69 @@
 
-<div class="mainbox" id="mainbox">
-  <div style="margin-left: 200px;">
-    <%= form_for(@interview) do |f| %>
-      <% if @interview.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@interview.errors.count, "error") %> prohibited this interview from being saved:</h2>
-          <ul>
-            <% @interview.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-    <table id="form1">
+<div class="mainbox" id="mainbox" style="margin-left: 200px;">
+
+  
+  <%= form_for(@interview) do |f| %>
+    <% if @interview.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@interview.errors.count, "error") %> prohibited this interview from being saved:</h2>
+        <ul>
+          <% @interview.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <div id="dialog">
+      <table id="form1">
         <tr>
-      <div class="field">
-              <th><%= f.label :Name %><br /></th><td>
-        <%= f.text_field :name %></td>
-      </div></tr><tr>
-           <th><%= f.label :Reference %><br /></th><td>
-        <%= f.text_field :refer %></td>
-      </div></tr><tr>
-      <div class="field">
-        <th>E-<%= f.label :Mail %><br /></th><td>
-        <%= f.text_field :email %></td>
-      </div></tr><tr>
-      <div class="field">
-        <th>Total <%= f.label :Experience %><br /></th><td>
-        <%= f.text_field :total_exp %></td>
-      </div></tr><tr>
-      <div class="field">
-        <th><%= f.label :Skills %><br /></th><td>
-        <%= f.text_field :ror_exp %></td>
-      </div></tr><tr>
-      <div class="field">
-        <th>Date Of <%= f.label :Interview %><br /></th><td>
-        <%= f.text_field :doi %></td>
-      </div></tr><tr>
-      <div class="field">
-        <th>Type or <%= f.label :Location %><br /></th><td>
-        <%= f.text_field :type_location %></td>
-      </div></tr><tr>
-      <div class="field">
-        <th><%= f.label :Status %><br /></th><td>
-        <%= f.text_field :result %></td>
-      </div></tr><tr>
-      <div class="field">
-        <th>Contact <%= f.label :Number %><br /></th><td>
-        <%= f.text_field :phoneNumber %></td>
-      </div></tr><tr>
-      <div class="field">
-        <th><%= f.label :Remarks %><br /></th><td>
-        <%= f.text_area :remarks %></td>
-      </div></tr><tr>
-  <div class="field">
-        <th>Date Of <%= f.label :Joining %><br /></th><td>
-        <%= f.text_field :dof %></td>
-      </div></tr><tr>
-     
-
-
-  </table>
+        <div class="field">
+          <th><%= f.label :Name %><br /></th><td>
+            <%= f.text_field :name %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th><%= f.label :Reference %><br /></th><td>
+            <%= f.text_field :refer %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th>E-<%= f.label :Mail %><br /></th><td>
+            <%= f.text_field :email %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th>Total <%= f.label :Experience %><br /></th><td>
+            <%= f.text_field :total_exp %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th><%= f.label :Skills %><br /></th><td>
+            <%= f.text_field :ror_exp %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th>Date Of <%= f.label :Interview %><br /></th><td>
+            <%= f.text_field :doi %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th>Type or <%= f.label :Location %><br /></th><td>
+            <%= f.text_field :type_location %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th><%= f.label :Status %><br /></th><td>
+            <%= f.text_field :result %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th>Contact <%= f.label :Number %><br /></th><td>
+            <%= f.text_field :phoneNumber %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th><%= f.label :Remarks %><br /></th><td>
+            <%= f.text_area :remarks %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th>Date Of <%= f.label :Joining %><br /></th><td>
+            <%= f.text_field :dof %></td>
+        </div></tr>
+      </table>
       <div class="actions">
         <center><tr><%= f.submit %></tr>
       </div></tr>
     <% end %>
-      
   </div>
 </div>

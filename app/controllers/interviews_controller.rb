@@ -22,6 +22,7 @@ class InterviewsController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @interview }
     end
+    
   end
  
   # GET /interviews/new

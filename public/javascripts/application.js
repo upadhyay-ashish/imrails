@@ -309,18 +309,29 @@ $(function() {
         }
     });
 });
-$('#ashish').click(function() {
-  $('#ashish').slideDown('slow', function() {
-    // Animation complete.
-  });
+
+$(document).ready(function() {
+	$('.details').each(function() {
+		var $dialog = $('<div></div>');
+		var $link = $(this).one('click', function() {
+			$dialog
+				.load($link.attr('href') + ' #test')
+				.dialog({
+					title: $link.attr('Candidate Details'),
+					width: 500,
+                                        minHeight: 600,
+					modal: true,
+                                        show: 'slide'
+
+				});
+                                 
+			$link.click(function() {
+				$dialog.dialog('open');
+				return false;
+			});
+			return false;
+		});
+	});
+
 });
 
-$(function() {
-  $("#dialog").dialog();
-});
-
- $("a").click(function(event){
-      event.preventDefault();
-      $("#frame").attr("src", $(this).attr("href"));
-      $('#dialog').dialog('open');
-    });

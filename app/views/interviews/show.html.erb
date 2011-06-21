@@ -8,8 +8,8 @@
       <% end %>
 
     <p id="notice"><%= notice %></td></tr>
-
-    <table id="form2" style="margin-left: 200px;">
+    <div id ="test">
+      <table id="form3">
       <caption><center><b>Details of <%= @interview.name.upcase %> </b></center></caption>
       <th>Experience:</th><td>
         <%= @interview.total_exp %>
@@ -60,12 +60,16 @@
           <%= @interview.email %>
         </td></tr>
       <tr>
-        <td><center><%= link_to 'Edit', edit_interview_path(@interview) %></td>
-        <td><center><%= link_to 'Back', interviews_path %></td>
+        <td><center><%= link_to 'Edit', edit_interview_path(@interview),:class =>"button_height ui-state-default ui-corner-all" %></td>
+        <td><center><%= link_to 'Back', interviews_path,:class =>"button_height ui-state-default ui-corner-all" %></td>
      
 
       </tr>
-    </table>
+      </table>
+    </div>
+
+    
+   
     <%=  link_to_function("Print this Page", "javascript:print()")%>
   </div>
 </div>
