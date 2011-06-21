@@ -44,7 +44,7 @@
             </li>
             <li <%= 'id=active' unless params[:controller] != 'home'%>>
 
-              <%= link_to 'Import Data via CSV File', csv_upload_interviews_url%>
+              <%= link_to 'Import Data via CSV File', csv_upload_interviews_url,:class => 'details'%>
             </li>
             
             <li <%= 'id=active' unless params[:controller] != 'home'%>>
