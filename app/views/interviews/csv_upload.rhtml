@@ -8,12 +8,12 @@
 
 <div class="mainbox_popup">
 <% form_for :csv_import, :url=>import_csv_interviews_path ,:html => { :multipart => true} do |f| %>
-  <div id="test">
+  <div id="test1">
 <table id="form3">
   <caption><center><%= f.label :file, 'Import Participant file' %></center></caption>
   <tr><td><center><%= f.file_field :file -%></td></tr>
-  <tr><td><center><%= submit_tag "Submit" %></td></tr>
-  <tr><td><center><%= link_to 'Cancel Upload', interviews_path,:class =>"button_height ui-state-default ui-corner-all" %></td>
+  <tr><td><center><%= submit_tag "Submit" %></td><td>
+  <%= link_to 'Cancel Upload', interviews_path %></td>
   </tr></table></div>
 <% end %>  
 

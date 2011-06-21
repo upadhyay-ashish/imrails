@@ -41,7 +41,7 @@
                 <%= "," if i+1 < interview.attachments.length%>
               <%end%>
             </td>
-            <td><%=  link_to image_tag("paperclip_icon.png", :alt => "Upload File", :title => "UPLOAD",:width => 20, :height => 20), "javascript:void(0);",:onclick=>"window.open('#{upload_personal_doc_url(:id=>interview.id)}','Import Document','Height=200px;width=960px;')" %>
+            <td><%=  link_to image_tag("paperclip_icon.png", :alt => "Upload File", :title => "UPLOAD",:width => 20, :height => 20), "javascript:void(0);",:onclick=>"window.open('#{upload_personal_doc_url(:id=>interview.id)}','Import Document','Height=75px;width=150px;')" %>
               <%=  link_to image_tag("Symbols Delete.png", :alt => "Delete", :title => "DELETE",:remote=>true,:width => 20, :height => 25), interview, :confirm => 'Are you sure?', :method => :delete %>
             </td> </td>
           </tr><% j=j+1 %>
