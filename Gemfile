@@ -12,6 +12,7 @@ gem 'will_paginate', '3.0.pre'
 gem 'meta_where'
 gem 'meta_search'
 gem "jquery-rails"
+gem "gridify"
 # Use unicorn as the web server
 # gem 'unicorn'
 

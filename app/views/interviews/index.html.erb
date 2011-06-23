@@ -1,18 +1,16 @@
-<script>
-
-</script>
 
 <%=render :partial=>"search"%>
 <div class="column contactlist">
   <div class="mainbox">
     <div class="menu">
       <% content_for :head do %>
-        <li><%=link_to "Export Search Results", request.parameters.merge({:format => :csv}),{:class=>"export"}%></li>
+        
         <li><%=link_to "Add New Candidates", new_interview_path%></li>
       <% end %>
     </div>
     <div class="displaying">
       <%= page_entries_info @interviews %>
+      <div style="margin-left:600px; position:absolute; margin-bottom: 10px;">Export<%= link_to image_tag("Excel.png", :alt => "Export as Excel", :title => "Export as Excel",:remote=>true,:width => 20, :height => 25), request.parameters.merge({:format => :csv})%></div>
     </div>
     <%if @interviews.blank?%>
       <h3>  No Results Found</h3>
@@ -20,10 +18,10 @@
     <table id="ashish"class="standard_table" cellpadding="0" cellspacing="0" >
       <tbody><tr class="list">
 
-          <th>Name</th>
+          <th>Resource Name</th>
           <th>Status</th>
-          <th>Reference</th>
-          <th>Date Of Interview</th>
+          <th>Recieved From</th>
+          <th>CV Recieved ON</th>
           <th>Document List</th>
           <th>Document Import</th>
         </tr><% j=1 %>
@@ -31,10 +29,10 @@
           <tr class="<%=cycle('', 'alt_row')%>">
 
             <td>
-              <%= link_to "#{h interview.name.upcase}",interview,:id=>"candidate_#{h interview.id}" ,:class => 'details' %></td>
-            <td><%=h interview.result %></td>
-            <td><%=h interview.refer %></td>
-            <td><%=h interview.doi.strftime("%d/%m/%Y")  %>
+              <%= link_to "#{h interview.resource_name.upcase}",interview,:id=>"candidate_#{h interview.id}" ,:class => 'details' %></td>
+            <td><%=h interview.status %></td>
+            <td><%=h interview.recieved_from %></td>
+            <td><%=h interview.cv_recieved_on.strftime("%d/%m/%Y")  %>
 
             <td><%interview.attachments.each_with_index do |attachment,i|%>
                 <%= link_to "#{attachment.data_file_name}", download_attachment_url(:id=>interview.id,:attachment_id=>attachment.id) %>

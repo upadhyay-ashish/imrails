@@ -1,7 +1,5 @@
 
-<div class="mainbox" id="mainbox" style="margin-left: 200px;">
-
-  
+<div class="mainbox" id="mainbox" >
   <%= form_for(@interview) do |f| %>
     <% if @interview.errors.any? %>
       <div id="error_explanation">
@@ -17,48 +15,67 @@
       <table id="form1">
         <tr>
         <div class="field">
-          <th><%= f.label :Name %><br /></th><td>
-            <%= f.text_field :name %></td>
+          <th>CV Recieved <%= f.label :ON %><br /></th><td>
+            <%= f.text_field :cv_recieved_on %></td>
         </div></tr><tr>
         <div class="field">
-          <th><%= f.label :Reference %><br /></th><td>
-            <%= f.text_field :refer %></td>
+          <th>Recieved <%= f.label :From %><br /></th><td>
+            <%= f.text_field :recieved_from %></td>
         </div></tr><tr>
         <div class="field">
-          <th>E-<%= f.label :Mail %><br /></th><td>
-            <%= f.text_field :email %></td>
+          <th>Resource <%= f.label :Name %><br /></th><td>
+            <%= f.text_field :resource_name %></td>
         </div></tr><tr>
         <div class="field">
-          <th>Total <%= f.label :Experience %><br /></th><td>
-            <%= f.text_field :total_exp %></td>
+          <th>For <%= f.label :Location %><br /></th><td>
+            <%= f.select(:for_location, Interview::For_Location) %></td>
         </div></tr><tr>
         <div class="field">
           <th><%= f.label :Skills %><br /></th><td>
-            <%= f.text_field :ror_exp %></td>
+            <%= f.text_field :skills %></td>
         </div></tr><tr>
         <div class="field">
-          <th>Date Of <%= f.label :Interview %><br /></th><td>
-            <%= f.text_field :doi %></td>
-        </div></tr><tr>
-        <div class="field">
-          <th>Type or <%= f.label :Location %><br /></th><td>
-            <%= f.text_field :type_location %></td>
-        </div></tr><tr>
-        <div class="field">
-          <th><%= f.label :Status %><br /></th><td>
-            <%= f.text_field :result %></td>
+          <th>Total <%= f.label :Experience %><br /></th><td>
+            <%= f.text_field :total_experience %></td>
         </div></tr><tr>
         <div class="field">
           <th>Contact <%= f.label :Number %><br /></th><td>
-            <%= f.text_field :phoneNumber %></td>
+            <%= f.text_field :contact_number %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th><%= f.label :Source %><br /></th><td>
+            <%= f.text_field :source %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th><%= f.label :Status %><br /></th><td>
+            <%= f.select(:status, Interview::Status) %></td>
         </div></tr><tr>
         <div class="field">
           <th><%= f.label :Remarks %><br /></th><td>
             <%= f.text_area :remarks %></td>
         </div></tr><tr>
         <div class="field">
+          <th>Date Of <%= f.label :Interview %><br /></th><td>
+            <%= f.text_field :date_of_interview %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th>First <%= f.label :Round %><br /></th><td>
+            <%= f.select(:first_round, Interview::First_Round) %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th>Second <%= f.label :Round %><br /></th><td>
+            <%= f.select(:second_round, Interview::Second_Round) %></td><tr>
+        <div class="field">
+          <th>MR <%= f.label :Round %><br /></th><td>
+            <%= f.select(:mr_round, Interview::MR_Round) %></td>
+        </div></tr><tr>
+        <div class="field">
+          <th>E-<%= f.label :Mail %><br /></th><td>
+            <%= f.text_field :email %></td>
+        </div></tr><tr>
+        <div class="field">
           <th>Date Of <%= f.label :Joining %><br /></th><td>
-            <%= f.text_field :dof %></td>
+            <%= f.text_field :date_of_joining %></td>
         </div></tr>
       </table>
       <div class="actions">

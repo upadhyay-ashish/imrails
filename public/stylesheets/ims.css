@@ -70,7 +70,7 @@ span.welcome{padding-right:10px;}
 
 .contactlist{ padding-left:210px; min-height:380px;}
 
-.mainbox { padding:5px; background:  repeat-x 0 7px #fff; border:1px solid #9dadb8 !important; -webkit-border-radius: 16px; -moz-border-radius: 16px; overflow:auto; min-height:100px; z-index:4; position:relative;max-height: 750px;  }
+.mainbox { padding:5px; background:  repeat-x 0 7px #fff; border:1px solid #9dadb8 !important; -webkit-border-radius: 16px; -moz-border-radius: 16px; overflow:auto; min-height:100px; z-index:4; position:relative;max-height: 850px;  }
 
 .mainbox h1 {background: repeat-x; padding:24px 20px 30px; margin:-5px!important; position: relative; top:-8px;}
 

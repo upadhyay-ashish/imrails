@@ -10,18 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110603095056) do
+ActiveRecord::Schema.define(:version => 20110623105128) do
 
-  create_table "attachments", :force => true do |t|
-    t.integer  "interview_id"
-    t.string   "data_file_name"
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "interviews", :force => true do |t|
+  create_table "a", :id => false, :force => true do |t|
+    t.integer  "id",            :default => 0, :null => false
     t.string   "name"
     t.integer  "total_exp"
     t.datetime "doi"
@@ -33,8 +25,37 @@ ActiveRecord::Schema.define(:version => 20110603095056) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "ror_exp"
-    t.date     "dof"
+  end
+
+  create_table "attachments", :force => true do |t|
+    t.integer  "interview_id"
+    t.string   "data_file_name"
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "interviews", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "refer"
+    t.datetime "cv_recieved_on"
+    t.string   "recieved_from"
+    t.string   "resource_name"
+    t.string   "skills"
+    t.integer  "total_experience"
+    t.string   "contact_number"
+    t.string   "source"
+    t.string   "status"
+    t.string   "remarks"
+    t.string   "first_round"
+    t.string   "second_round"
+    t.string   "mr_round"
+    t.string   "email"
+    t.datetime "date_of_interview"
+    t.datetime "date_of_joining"
+    t.string   "for_location"
   end
 
   create_table "users", :force => true do |t|

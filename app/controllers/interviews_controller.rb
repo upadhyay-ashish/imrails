@@ -3,14 +3,14 @@ class InterviewsController < ApplicationController
   # GET /interviews
   # GET /interviews.xml
   def index
-    params[:page] ||=1    
+     params[:page] ||=1
     @interviews = Interview.paginate(:per_page=>9,:page=>params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @interviews }
-      format.csv {  generate_csv_headers("Interview-#{Time.now.strftime("%Y%m%d")}") }
-    end
+      format.xml { render :xml => @interviews }
+      format.csv { generate_csv_headers("Interview-#{Time.now.strftime("%Y%m%d")}") }
+     end
   end
 
   # GET /interviews/1
@@ -144,13 +144,5 @@ class InterviewsController < ApplicationController
         'Content-Disposition'       => "attachment; filename=\"#{filename}\"",
         'Content-Transfer-Encoding' => 'binary'
       })
-  end
-
-  def get_content_to_display
-    respond_to do |format|
-      render :update do |page|
-        page.replace_html "mainBox", :partial => 'page1'
-      end
-    end
   end
 end
