@@ -4,7 +4,7 @@
  <%  tsv << headers %>
 <% end %>
 <%- @interviews.each do |n| -%>
-<%- row = [n.cv_recieved_on,n.resource_name,n.for_location,n.total_experience,n.contact_number,n.source,n.status,n.remarks,n.date_of_interview,n.first_round,n.second_round,n.mr_round,n.email,n.date_of_joining ] -%>
+<%- row = [n.id,n.cv_recieved_on,n.resource_name,n.for_location,n.total_experience,n.contact_number,n.source,n.status,n.remarks,n.date_of_interview,n.first_round,n.second_round,n.mr_round,n.email,n.date_of_joining ] -%>
 <%  tsv_str = FasterCSV.generate(:col_sep => "\t") do |tsv| %>
  <%  tsv << row %>
 <% end %>
