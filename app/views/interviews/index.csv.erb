@@ -1,13 +1,15 @@
-
 <%- headers = ["Serial Number", "CV Recieved On","Resource Name","For Location","Skills","Total Experience","Contact#","Source","Status","Remarks","Date of Interview","First Round","Second Round","MR Round","E-Mail","Date Of Joining"] -%>
 <%  tsv_str = FasterCSV.generate(:col_sep => "\t") do |tsv| %>
  <%  tsv << headers %>
 <% end %>
 <% i=1 %>
-<%- @interviews.each do |n| -%>
-<%- row = [i,n.cv_recieved_on,n.resource_name,n.for_location,n.total_experience,n.contact_number,n.source,n.status,n.remarks,n.date_of_interview,n.first_round,n.second_round,n.mr_round,n.email,n.date_of_joining ] -%>
+<%- @interviews_csv.each do |n| -%>
+<%- row = [i,n.cv_recieved_on,n.resource_name,n.for_location,n.skills,n.total_experience,n.contact_number,n.source,n.status,n.remarks,n.date_of_interview,n.first_round,n.second_round,n.mr_round,n.email,n.date_of_joining ] -%>
 <% i= i+1 %>
   <%  tsv_str = FasterCSV.generate(:col_sep => "\t") do |tsv| %>
  <%  tsv << row %>
 <% end %>
 <% end %>
+
+
+

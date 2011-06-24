@@ -8,10 +8,10 @@
         <li><%=link_to "Add New Candidates", new_interview_path%></li>
       <% end %>
     </div>
-    <div class="displaying">
+    <div class="displaying" >
       <%= page_entries_info @interviews %>
-      <div style="margin-left:600px; position:absolute; margin-bottom: 10px;">Export<%= link_to image_tag("Excel.png", :alt => "Export as Excel", :title => "Export as Excel",:remote=>true,:width => 20, :height => 25), request.parameters.merge({:format => :csv})%></div>
-    </div>
+      <div style="margin-left:700px; position:absolute; margin-bottom: 10px;">Export<%= link_to image_tag("Excel.png", :alt => "Export as Excel", :title => "Export as Excel",:remote=>true,:width => 20, :height => 25), request.parameters.merge({:format => :csv})%></div>
+    </div><br>
     <%if @interviews.blank?%>
       <h3>  No Results Found</h3>
     <%end%>

@@ -3,14 +3,15 @@ class InterviewsController < ApplicationController
   # GET /interviews
   # GET /interviews.xml
   def index
-     params[:page] ||=1
-    @interviews = Interview.paginate(:per_page=>9,:page=>params[:page])
-
+    params[:page] ||=1
+    @interviews_csv = Interview.all
+    @interviews = Interview.paginate(:per_page=>8,:page=>params[:page])
+     
     respond_to do |format|
       format.html # index.html.erb
       format.xml { render :xml => @interviews }
       format.csv { generate_csv_headers("Interview-#{Time.now.strftime("%Y%m%d")}") }
-     end
+    end
   end
 
   # GET /interviews/1
@@ -21,6 +22,7 @@ class InterviewsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @interview }
+      format.pdf { render :layout => false }
     end
     
   end
@@ -101,11 +103,11 @@ class InterviewsController < ApplicationController
     end
     flash[:notice] = "Successfully added #{logcount} Participant(s)."
     redirect_to interviews_path
-        rescue => exception
-          # If an exception is thrown, the transaction rolls back and we end up in this rescue block
-          error = ERB::Util.h(exception.to_s) # get the error and HTML escape it
-          flash[:error] = "Please Check The File Being uploaded.Check File Format and CSV Headers.Please try again.(#{error})"
-          redirect_to csv_upload_interviews_url
+  rescue => exception
+    # If an exception is thrown, the transaction rolls back and we end up in this rescue block
+    error = ERB::Util.h(exception.to_s) # get the error and HTML escape it
+    flash[:error] = "Please Check The File Being uploaded.Check File Format and CSV Headers.Please try again.(#{error})"
+    redirect_to csv_upload_interviews_url
      
   end
 
@@ -127,7 +129,8 @@ class InterviewsController < ApplicationController
 
   def search    
     @search = Interview.search(params[:search])
-    @interviews = @search.all.paginate(:per_page=>9,:page=>params[:page])
+    @interviews = @search.all.paginate(:per_page=>8,:page=>params[:page])
+    @interviews_csv = @search
     respond_to do |format|
       format.csv do
         generate_csv_headers("Interview-#{Time.now.strftime("%Y%m%d")}")

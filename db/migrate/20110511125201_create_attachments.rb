@@ -14,3 +14,4 @@ class CreateAttachments < ActiveRecord::Migration
     drop_table :attachments
   end
 end
+

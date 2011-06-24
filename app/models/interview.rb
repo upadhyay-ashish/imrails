@@ -11,6 +11,6 @@ class Interview < ActiveRecord::Base
   Second_Round = ["Not Applicable","Moved To Next Round","Rejected"]
   MR_Round = ["Not Applicable","Selected","Rejected","Pending with HR"]
   For_Location = ["Not Applicable","Mumbai","Banglore","Gurgaon"]
-  Status = ["Not Applicable","Selected","Rejected","Pending"]
+  Status = ["Not Applicable","Selected","Rejected","Pending","Internal Evaluation"]
 
 end

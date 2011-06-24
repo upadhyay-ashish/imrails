@@ -19,23 +19,10 @@ $(function() {
                         "PL SQL",
                         "Oracle",
                         "Lotus Notes",
+                        "Cognos",
 			"Ruby on Rails"
 		];
 		$( "#interview_skills" ).autocomplete({
-			source: availableTags
-		});
-	});
-$(function() {
-		var availableTags = [
-			"Accepted",
-			"Rejected",
-                        "Pending First Round",
-                        "Pending Second Round",
-                        "Pending MR Round",
-                        "Documents Pending",
-			"Withdrawn"
-		];
-		$( "#interview_status" ).autocomplete({
 			source: availableTags
 		});
 	});
