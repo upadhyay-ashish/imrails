@@ -1,5 +1,5 @@
 class InterviewsController < ApplicationController
-  before_filter :authenticate
+ #before_filter :authenticate
   # GET /interviews
   # GET /interviews.xml
   def index
