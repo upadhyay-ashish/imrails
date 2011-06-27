@@ -1,4 +1,5 @@
 class InterviewsController < ApplicationController
+ #ankit did it
  #before_filter :authenticate
   # GET /interviews
   # GET /interviews.xml
