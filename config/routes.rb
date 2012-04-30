@@ -4,6 +4,7 @@ IMSRails3::Application.routes.draw do
     collection  do
       post 'verify_login'
       get 'search'
+      get 'login'
     end
   end
 

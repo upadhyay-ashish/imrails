@@ -7,7 +7,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @users }   
+      format.xml  { render :xml => @users }
+      format.csv { generate_csv_headers("Users-#{Time.now.strftime("%Y%m%d")}") }
     end
   end
 
@@ -114,7 +115,15 @@ class UsersController < ApplicationController
   def logout
     reset_session
     flash[:notice] = "Succesfully Logged  Out."
-    redirect_to root_url
+    redirect_to login_users_url
   end
- 
+
+  private
+
+  def validate_admin
+    flash[:notice] = "You Don't have access to this page."
+    redirect_to :back unless @user.role=="SuperAdmin"
+  end
+
+
 end

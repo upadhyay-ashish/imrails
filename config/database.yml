@@ -11,7 +11,7 @@ development:
   database: ims_rails3_development
   pool: 5
   username: root
-  password:
+  password: admin
   host: localhost
 
 

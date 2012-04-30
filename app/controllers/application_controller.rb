@@ -11,4 +11,13 @@ class ApplicationController < ActionController::Base
       end
     end
   end
+
+  def generate_csv_headers(filename)
+    headers.merge!({
+        'Cache-Control'             => 'must-revalidate, post-check=0, pre-check=0',
+        'Content-Type'              => 'csv',
+        'Content-Disposition'       => "attachment; filename=\"#{filename}\"",
+        'Content-Transfer-Encoding' => 'binary'
+      })
+  end
 end

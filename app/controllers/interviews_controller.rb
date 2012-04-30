@@ -1,6 +1,6 @@
 class InterviewsController < ApplicationController
  #ankit did it
- #before_filter :authenticate
+ before_filter :authenticate
   # GET /interviews
   # GET /interviews.xml
   def index
@@ -141,12 +141,5 @@ class InterviewsController < ApplicationController
     end
   end 
 
-  def generate_csv_headers(filename)
-    headers.merge!({
-        'Cache-Control'             => 'must-revalidate, post-check=0, pre-check=0',
-        'Content-Type'              => 'csv',
-        'Content-Disposition'       => "attachment; filename=\"#{filename}\"",
-        'Content-Transfer-Encoding' => 'binary'
-      })
-  end
+  
 end
