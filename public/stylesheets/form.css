@@ -97,9 +97,9 @@ textarea:focus
 }
 #username
 {
-    margin-left: 610px;
+    margin: 0 2px 0 610px;
     color:Black;
-    background-color: greenyellow;
+    background-color:yellow;
 }
 #form3
 {

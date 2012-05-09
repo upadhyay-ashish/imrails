@@ -26,7 +26,7 @@
           <div class="info" style="float:right">
             <% if @current_user %>
               <label id="username">
-                User Logged In : <%= @current_user.firstname%> <%= @current_user.lastname %>&nbsp;&nbsp; | &nbsp;
+                <%= @current_user.firstname%> <%= @current_user.lastname %>&nbsp;&nbsp; | &nbsp;
                 <%= link_to 'Logout', logout_url%>&nbsp;&nbsp; | &nbsp; <%= link_to 'Change Password', change_password_form_users_url, :class=>'lightbox', :rel=>"facebox" %>
               </label>
             <% end %>
