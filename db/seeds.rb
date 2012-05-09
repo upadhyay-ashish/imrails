@@ -7,5 +7,5 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 
-User.create(:username=>"tcs",:password=>"tcs_!@#",:role=>"Admin")
-User.create(:username=>"tcs_superadmin",:password=>"tcs_!@#",:role=>"SuperAdmin")
+User.create(:username=>"tcs",:password=>"tcs_!@#",:role=>"Admin", :firstname=>"tcs", :lastname=>"TCS",:email=>"tcs@tcs.com",:address=>"Powai",:phone_number=>"999999999")
+User.create(:username=>"tcs_superadmin",:password=>"tcs_!@#",:role=>"SuperAdmin", :firstname=>"Super", :lastname=>"Admin",:email=>"superadmin@tcs.com",:address=>"Powai",:phone_number=>"999999999")

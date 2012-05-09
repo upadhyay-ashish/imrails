@@ -2,16 +2,23 @@
 <%=render :partial=>"search"%>
 <div class="column contactlist">
   <div class="mainbox">
-    <div class="menu">
-      <% content_for :head do %>
-        
-        <li><%=link_to "Add New Candidates", new_interview_path%></li>
-      <% end %>
-    </div>
+    <% if params[:errors] and params[:errors].any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(params[:errors].count, "error") %> prohibited this document from being saved:</h2>
+        <ul>
+          <% params[:errors].each do |key,msg| %>
+            <li><%= key.to_s + " " + msg.to_s %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     <div class="displaying" >
       <%= page_entries_info @interviews %>
-      <div style="margin-left:700px; position:absolute; margin-bottom: 10px;">Export<%= link_to image_tag("Excel.png", :alt => "Export as Excel", :title => "Export as Excel",:remote=>true,:width => 20, :height => 25), request.parameters.merge({:format => :csv})%></div>
-    </div><br>
+      <div style="margin-top:-10px;float:right;">
+        <%=link_to "Add New Candidate", new_interview_path%> | &nbsp;&nbsp;&nbsp;
+        Export<%= link_to image_tag("Excel.png", :alt => "Export as Excel", :title => "Export as Excel",:remote=>true,:width => 20, :height => 25), request.parameters.merge({:xls => 'true'})%>
+      </div>
+    </div><br/>
     <%if @interviews.blank?%>
       <h3>  No Results Found</h3>
     <%end%>
@@ -29,7 +36,7 @@
           <tr class="<%=cycle('', 'alt_row')%>">
 
             <td>
-              <%= link_to "#{h interview.resource_name.upcase}",interview,:id=>"candidate_#{h interview.id}" ,:class => 'details' %></td>
+              <%= link_to "#{h interview.resource_name.upcase}",interview,:id=>"candidate_#{h interview.id}" %></td>
             <td><%=h interview.status %></td>
             <td><%=h interview.recieved_from %></td>
             <td><%=h interview.cv_recieved_on.strftime("%d/%m/%Y")  %>
@@ -39,7 +46,8 @@
                 <%= "," if i+1 < interview.attachments.length%>
               <%end%>
             </td>
-            <td><%=  link_to image_tag("paperclip_icon.png", :alt => "Upload File", :title => "UPLOAD",:width => 20, :height => 20), "javascript:void(0);",:onclick=>"window.open('#{upload_personal_doc_url(:id=>interview.id)}','Import Document','Height=75px;width=150px;')" %>
+            <td><%#=  link_to image_tag("paperclip_icon.png", :alt => "Upload File", :title => "UPLOAD",:width => 20, :height => 20), "javascript:void(0);",:onclick=>"window.open('#{upload_personal_doc_url(:id=>interview.id)}','Import Document','Height=75px;width=150px;')" %>
+              <%=  link_to image_tag("paperclip_icon.png", :alt => "Upload File", :title => "UPLOAD",:width => 20, :height => 20), upload_personal_doc_url(:id=>interview.id), :class=>'lightbox', :rel=>"facebox" %>
               <%=  link_to image_tag("Symbols Delete.png", :alt => "Delete", :title => "DELETE",:remote=>true,:width => 20, :height => 25), interview, :confirm => 'Are you sure?', :method => :delete %>
             </td> </td>
           </tr><% j=j+1 %>
@@ -48,4 +56,5 @@
     </table>
     <%=will_paginate @interviews%>
     <div class="clear"></div>
-  </div></div>
+  </div>
+</div>

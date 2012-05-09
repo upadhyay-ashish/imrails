@@ -76,7 +76,7 @@ span.welcome{padding-right:10px;}
 
 .mainbox.fullsize { margin: 0 0 7px 0!important; *min-width:920px!important;}
 
-.mainbox_popup{ padding:5px; background:  repeat-x 0 7px #fff; border:1px solid #9dadb8 !important; -webkit-border-radius: 6px; -moz-border-radius: 6px; overflow:auto; min-height:100px; z-index:2; position:relative; width:500px; margin-left:250px;}
+.mainbox_popup{ padding:5px; background:  repeat-x 0 7px #fff; border:1px solid #9dadb8 !important; -webkit-border-radius: 6px; -moz-border-radius: 6px; overflow:auto; min-height:100px; z-index:2; position:relative; width:500px;}
 #start_over { color:#00aced; padding:15px 0 0 15px; font-size:11px; font-weight:bold; float:left;}
 
 
@@ -238,7 +238,7 @@ span.welcome{padding-right:10px;}
 .deadlines dd b{ color:red;}	
 
 .close:link,
-.close:visited{ background:no-repeat; width:21px; height:21px; float:right; padding:0!important; margin:0!important;}
+.close:visited{ background:no-repeat; float:right; padding:0!important; margin:0!important;}
 
  
 .keyword_search{ background:#ccdadb; border:1px solid #94a9b5;  -webkit-border-radius: 6px; -moz-border-radius: 6px;  overflow:auto; padding: 10px; margin-bottom:6px; }

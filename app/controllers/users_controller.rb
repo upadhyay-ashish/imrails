@@ -4,11 +4,17 @@ class UsersController < ApplicationController
   # GET /users.xml
   def index
     @users = User.paginate(:per_page=>30,:page=>params[:page])
-
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {
+        if params["xls"] == 'true'
+          @xls_users = User.all
+          generate_xls_headers("Users-#{Time.now.strftime("%Y%m%d")}.xls")
+          render 'index_xls', :layout => false
+        else
+          render 'index'
+        end
+      }
       format.xml  { render :xml => @users }
-      format.csv { generate_csv_headers("Users-#{Time.now.strftime("%Y%m%d")}") }
     end
   end
 
@@ -84,7 +90,11 @@ class UsersController < ApplicationController
   end
 
   def login
-    render :layout=>false
+    if session[:user_id].blank?
+      render :layout=>false
+    else
+      redirect_to interviews_path
+    end
   end
 
   def verify_login
@@ -96,7 +106,8 @@ class UsersController < ApplicationController
       session[:role] = user.role
       redirect_to interviews_path
     else
-      redirect_to root_url
+      @error = "username and password doesn't match"
+      render "login", :layout=>false
     end
   end
 
@@ -104,11 +115,15 @@ class UsersController < ApplicationController
     @search = User.search(params[:search])
     @users = @search.all.paginate(:per_page=>30,:page=>params[:page])
     respond_to do |format|
-      format.csv do
-        generate_csv_headers("Interview-#{Time.now.strftime("%Y%m%d")}")
-        render :action=>:index
-      end
-      format.html { render :action=>:index }
+      format.html { 
+        if params["xls"] == 'true'
+          @xls_users = @search
+          generate_xls_headers("Users-#{Time.now.strftime("%Y%m%d")}.xls")
+          render 'index_xls', :layout => false
+        else
+          render 'index'
+        end
+      }
     end
   end
 
@@ -116,6 +131,22 @@ class UsersController < ApplicationController
     reset_session
     flash[:notice] = "Succesfully Logged  Out."
     redirect_to login_users_url
+  end
+
+  def change_password_form
+    render :layout=>false
+  end
+
+  def change_password
+    if params[:password] != @current_user.password
+      @error = "Current password doesn't match"
+    elsif params[:new_password] == ""
+      @error = "Password can not be blank"
+    elsif params[:new_password] != params[:confirm_password]
+      @error = "new password and confirm password doesn't match"
+    else
+      @current_user.update_attribute(:password, params[:new_password])
+    end
   end
 
   private

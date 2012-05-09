@@ -1,0 +1,23 @@
+<%- headers = ["Serial Number","First Name", "Last Name","Username", "Role", "Email", "Phone","Address"] -%>
+
+<table width="450" border="1">
+  <tr>
+    <%for h in headers%>
+      <th><%=h%></th>
+    <%end%>
+  </tr>
+<% i=1 %>
+  <% for u in @xls_users %>
+    <tr>
+      <td><%= i.to_s %></td>
+      <td><%= u.firstname %></td>
+      <td><%= u.lastname %></td>
+      <td><%= u.username %></td>
+      <td><%= u.role %></td>
+      <td><%= u.email %></td>
+      <td><%= u.phone_number %></td>
+      <td><%= u.address %></td>
+      <%i+=1%>
+    </tr>
+  <% end %>
+</table>

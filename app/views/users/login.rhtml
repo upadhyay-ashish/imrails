@@ -17,6 +17,7 @@
         text-decoration: none;
         color: #666666;
       }
+      .errorExplanation{color: red;}
       -->
     </style>
   </head>
@@ -26,7 +27,7 @@
     <fieldset>
       <legend><b>Login To Interview Management System</b></legend>
 
-      <%= form_tag('users/verify_login') do -%>
+      <%= form_tag verify_login_users_path do -%>
 
         <table align="center" border="0" cellpadding="0" cellspacing="0" >
 
@@ -37,6 +38,13 @@
                         <td bgcolor="#F1F7FF">
                           <table id="table3" align="center" border="0" cellpadding="2" cellspacing="0" width="98%">
                             <tbody>
+                              <%if @error%>
+                                <tr>
+                                  <td colspan="2" class="errorExplanation">
+                                    <%=@error%>
+                                  </td>
+                                </tr>
+                              <%end%>
                               <tr>
                                 <td align="left" width="37%"> Username</td>
                                 <td width="60%">

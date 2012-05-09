@@ -1,0 +1,14 @@
+<%- headers = ["Serial Number","First Name", "Last Name","Username", "Role", "Email", "Phone","Address"] -%>
+<%  tsv_str = FasterCSV.generate(:col_sep => "\t") do |tsv| %>
+ <%  tsv << headers %>
+<% end %>
+<% i=1 %>
+<%- @csv_users.each do |u| -%>
+<%- row = [i,u.firstname,u.lastname,u.username,u.role,u.email,u.phone_number,u.address] -%>
+<% i= i+1 %>
+  <%  tsv_str = FasterCSV.generate(:col_sep => "\t") do |tsv| %>
+ <%  tsv << row %>
+<% end %>
+<% end %>
+
+

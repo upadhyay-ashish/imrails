@@ -12,7 +12,9 @@ class Attachment < ActiveRecord::Base
     'application/pdf',
     'application/msword',
     'application/vnd.ms-excel',
-    'application/txt']
+    'application/txt',
+    'text/plain'
+    ]
   validate :prohibited_ext
 
 

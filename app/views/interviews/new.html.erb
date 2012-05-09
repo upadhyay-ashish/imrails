@@ -2,10 +2,7 @@
 <div class="column contactlist">
   <div id="new1" class="mainbox">
     <div class="menu">
-      <% content_for :head do %>
-        <li><%=link_to "Export Search Results", request.parameters.merge({:format => :csv}),{:class=>"export"}%></li>
-        <li><%=link_to "Add New Candidates", new_interview_path%></li>
-      <% end %>
+      
 <%= render 'form' %>
 <%= link_to 'Back', interviews_path %>
 </div>

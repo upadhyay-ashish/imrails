@@ -1,0 +1,31 @@
+<%- headers = ["Serial Number", "CV Recieved On","Resource Name","For Location","Skills","Total Experience","Contact#","Source","Status","Remarks","Date of Interview","First Round","Second Round","MR Round","E-Mail","Date Of Joining"] -%>
+
+<table width="450" border="1">
+  <tr>
+    <%for h in headers%>
+      <th><%=h%></th>
+    <%end%>
+  </tr>
+<% i=1 %>
+  <% for n in @interviews_xls %>
+    <tr>
+      <td><%= i.to_s %></td>
+      <td><%= n.cv_recieved_on.strftime("%d/%m/%Y") %></td>
+      <td><%= n.resource_name %></td>
+      <td><%= n.for_location %></td>
+      <td><%=n.skills%></td>
+      <td><%=n.total_experience%></td>
+      <td><%=n.contact_number%></td>
+      <td><%=n.source%></td>
+      <td><%=n.status%></td>
+      <td><%=n.remarks%></td>
+      <td><%=n.date_of_interview%></td>
+      <td><%=n.first_round%></td>
+      <td><%=n.second_round%></td>
+      <td><%=n.mr_round%></td>
+      <td><%=n.email%></td>
+      <td><%=n.date_of_joining%></td>
+      <%i+=1%>
+    </tr>
+  <% end %>
+</table>

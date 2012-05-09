@@ -11,14 +11,10 @@
   <div id="test1">
 <table id="form3">
   <caption><center><%= f.label :file, 'Import Participant file' %></center></caption>
-  <tr><td><center><%= f.file_field :file -%></td></tr>
-  <tr><td><center><%= submit_tag "Submit" %></td><td>
+  <tr><td><center><%= f.file_field :file -%><%= link_to 'Download Format', csv_format_interviews_path %></td></tr>
+  <tr><td><center><%= submit_tag "Submit",:style=>"width:90px;" %>
   <%= link_to 'Cancel Upload', interviews_path %></td>
   </tr></table></div>
 <% end %>  
 
 </div>
- <% content_for :head do %>
-        
-        <li><%=link_to "Add New Candidates", new_interview_path%></li>
-      <% end %>

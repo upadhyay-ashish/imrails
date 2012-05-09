@@ -2,9 +2,14 @@ IMSRails3::Application.routes.draw do
   
   resources :users do
     collection  do
-      post 'verify_login'
-      get 'search'
-      get 'login'
+      post 'verify_login', 'change_password'
+      get  'search'
+      get  'login'
+      get  'change_password_form'
+      #post 'change_password'
+    end
+    member do
+      #post 'change_password'
     end
   end
 
@@ -13,6 +18,7 @@ IMSRails3::Application.routes.draw do
       get 'csv_upload'
       post 'import_csv'      
       get 'search'
+      get 'csv_format'
     end    
   end
   match 'interview/:id/download_attachment/:attachment_id' => "interviews#download_attachment",:as=>"download_attachment"

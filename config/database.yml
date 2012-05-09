@@ -8,10 +8,10 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: ims_rails3_development
+  database: ims_development
   pool: 5
   username: root
-  password: admin
+  password: root
   host: localhost
 
 

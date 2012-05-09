@@ -1,5 +1,5 @@
 <%- headers = ["Serial Number", "CV Recieved On","Resource Name","For Location","Skills","Total Experience","Contact#","Source","Status","Remarks","Date of Interview","First Round","Second Round","MR Round","E-Mail","Date Of Joining"] -%>
-<%  tsv_str = FasterCSV.generate(:col_sep => "\t") do |tsv| %>
+<%  tsv_str = FasterCSV.generate(:col_sep => ";") do |tsv| %>
  <%  tsv << headers %>
 <% end %>
 <% i=1 %>

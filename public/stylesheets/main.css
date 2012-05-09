@@ -153,7 +153,8 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 	input#search{  margin-bottom:5px;}
 
 /* Main menu (tabs) */
-#tabs {background:#878785; margin:0 5px; padding:10px 0 0 0; _height:1px;border:true;border-width: 1px;}
+/*#tabs {background:#878785; padding:10px 0 0 0; _height:1px;border:true;border-width: 1px;}*/
+#tabs {background:#878785; padding:10px 0 0 0; _height:1px;border:true;border-width: 1px;}
 
     #tabs ul {margin:0 10px; padding:0; list-style:none;color:#FF9000;}
     #tabs ul li {margin:0 5px 0 0; padding:0; float:left;color:#FF9000;}
@@ -200,7 +201,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     .newheading{margin:0 0px; padding:2px; background:#DEE5FD url("../images/design/content_title_bg.gif") 0 0 repeat-x; color:#192666;width:985px}
     .newheading h2 span {background:url("../images/design/ico_list.gif") 0 50% no-repeat; padding-left:25px;}
 /* Content */
-#content {float:left; width:724px; _width:744px; margin:0; padding:0 0 0 20px;}
+#content {margin:0; padding:0 10px;}
 
     /* Content - article */
     #content .article {clear:both; margin:0; padding:10px 10px 0 20px;; background:url("../images/design/content_article_bg.jpg") 0 0 no-repeat;}
@@ -218,7 +219,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #content .info span.user {background:url("../images/design/ico_user.gif") 0 50% no-repeat; margin-left:8px;}
     #content .info span.comments {background:url("../images/design/ico_comments.gif") 0 50% no-repeat; margin-left:8px;}
     #content .warning {font-size:100%; font-weight:normal; color:red;}
-    #content .success {font-size:100%; font-weight:normal; color:green;}
+    #content .success {font-size:100%; font-weight:normal; color:green; text-align:center;}
     #content .errorExplanation {font-size:100%; font-weight:normal; color:red;}
 
     /* Content - More */
@@ -393,7 +394,7 @@ h2 tr{ border:0; background:none!important;}
 .hide {display:none;}
 
 .close:link,
-.close:visited { display:block; padding:8px 15px 0 0; color:#0099ff; width: 100px}
+.close:visited { display:block; color:#0099ff;}
 
 .cancel:link,
 .cancel:visited{text-decoration:none; float:right; padding:8px 15px 0 0; font-weight:bold; color:#0099ff;}
@@ -466,7 +467,7 @@ h2 tr{ border:0; background:none!important;}
 
 .assigning{ border:1px solid #aaa; padding:10px; overflow:auto; margin:6px 0 28px; background:url(../images/design/assigning.png) repeat-x; }
 .assigning select { border:1px solid #888!important;}
-.assigning a:link color:#0099FF,
+.assigning a:link {color:#0099FF;}
 .assigning a:visited{ float:right; padding-top:2px; font-weight:bold; color:#0099ff; color:#fff;}
 
 
@@ -491,5 +492,9 @@ h2 tr{ border:0; background:none!important;}
 
 #tabs ul li a
 {
-    color:white;
+    color:black;
+}
+
+.active{
+    background: #FFFCF0;
 }

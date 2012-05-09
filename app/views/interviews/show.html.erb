@@ -2,16 +2,12 @@
 <div class="column contactlist">
   <div class="mainbox">
     <div class="menu">
-      <% content_for :head do %>
-        <li><%=link_to "Export Search Results", request.parameters.merge({:format => :csv}),{:class=>"export"}%></li>
-        <li><%=link_to "Add New Candidates", new_interview_path%></li>
-      <% end %>
-
-      <p id="notice"><%= notice %></td></tr>
+      
+      <p id="notice"><%= notice %></p>
       <div id ="test">
         <table id="form3">
           <caption><center><b>Details of <%= @interview.resource_name.upcase %> </b></center></caption>
-          <th>Experience:</th><td>
+          <tr><th>Experience:</th><td>
             <%= @interview.cv_recieved_on.strftime("%d/%m/%Y") %>
           </td></tr>
           <tr>
@@ -94,3 +90,4 @@
       <%=  link_to_function("Print this Page", "javascript:print()")%>
     </div>
   </div>
+</div>

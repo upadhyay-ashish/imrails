@@ -5,13 +5,19 @@ class InterviewsController < ApplicationController
   # GET /interviews.xml
   def index
     params[:page] ||=1
-    @interviews_csv = Interview.all
     @interviews = Interview.paginate(:per_page=>8,:page=>params[:page])
      
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {
+        if params["xls"] == 'true'
+          @interviews_xls = Interview.all
+          generate_xls_headers("Interview-#{Time.now.strftime("%Y%m%d")}.xls")
+          render 'index_xls', :layout => false
+        else
+          render 'index'
+        end
+      }
       format.xml { render :xml => @interviews }
-      format.csv { generate_csv_headers("Interview-#{Time.now.strftime("%Y%m%d")}") }
     end
   end
 
@@ -114,13 +120,14 @@ class InterviewsController < ApplicationController
 
   def upload_personal_doc
     @interview = Interview.find params[:id]
-    render :layout => "popup"
+    render :layout => false
   end
 
   def import_personal_doc    
     @interview = Interview.find(params[:id])
     @attachment = @interview.attachments.new(params[:attachment])
     @attachment.save
+    redirect_to interviews_url(:errors=>@attachment.errors)
   end
   
   def download_attachment
@@ -131,15 +138,21 @@ class InterviewsController < ApplicationController
   def search    
     @search = Interview.search(params[:search])
     @interviews = @search.all.paginate(:per_page=>8,:page=>params[:page])
-    @interviews_csv = @search
     respond_to do |format|
-      format.csv do
-        generate_csv_headers("Interview-#{Time.now.strftime("%Y%m%d")}")
-        render :action=>:index
-      end
-      format.html { render :action=>:index }
+      format.html {
+        if params["xls"] == 'true'
+          @interviews_xls = @search
+          generate_xls_headers("Interview-#{Time.now.strftime("%Y%m%d")}.xls")
+          render 'index_xls', :layout => false
+        else
+          render 'index'
+        end
+      }
     end
   end 
 
-  
+  def csv_format
+    send_file('public/format.csv', :type => "text/csv; charset=utf-8")
+ 
+  end
 end
